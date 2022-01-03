@@ -21,7 +21,8 @@ create table cliente(
 
   constraint cliente_pk primary key(cliente_id),
   constraint cliente_tarjeta_id_fk foreign key(tarjeta_id)
-  references tarjeta(tarjeta_id)
+  references tarjeta(tarjeta_id),
+  constraint cliente_tarjeta_id_uk unique(tarjeta_id)
 );
 
 create table status_pedido(
@@ -39,8 +40,10 @@ create table empleado(
   apellido_paterno varchar2(40) not null,
   apellido_materno varchar2(40) not null,
   rfc varchar2(13) not null,
-  fecha_ingreso date not null,
+  fecha_ingreso date default sysdate,
   centro_de_operacion_id number(10,0) not null,
+  sueldo_mensual number(10,2) not null,
+  sueldo_quincenal generated always as (sueldo_mensual/2) virtual,
   
   constraint empleado_pk primary key(empleado_id),
   constraint empleado_centro_de_operacion_id foreign key(centro_de_operacion_id)
@@ -62,14 +65,15 @@ create table pedido(
   constraint pedido_cliente_id_fk foreign key(cliente_id)
   references cliente(cliente_id),
   constraint pedido_status_pedido_id_fk foreign key(status_pedido_id)
-  references status_pedido(status_pedido_id)
+  references status_pedido(status_pedido_id),
+  constraint pedido_folio_uk unique(folio)
 );
 
 create table ubicacion(
   ubicacion_id number(10,0) not null,
   longitud number(10,7) not null,
   latitud number(10,7) not null,
-  fecha date not null,
+  fecha date default sysdate,
   pedido_id number(10,0) not null,
 
   constraint ubicacion_pk  primary key(ubicacion_id)
@@ -101,7 +105,8 @@ create table detalle_pedido(
   constraint detalle_pedido_medicamento_presentacion_id_fk foreign key (medicamento_presentacion_id)
   references medicamento_presentacion(medicamento_presentacion_id),
   constraint detalle_pedido_pedido_id_fk foreign key(pedido_id)
-  references pedido(pedido_id)
-)
+  references pedido(pedido_id),
+  constraint detalle_pedido_unidades_chk check(unidades>0)
+);
 
 
