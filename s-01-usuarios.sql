@@ -49,11 +49,19 @@ grant create session to rol_invitado;
 --Crear usuarios
 prompt creando usuarios
 
-create user cmz_proy_admin identified by cmz quota 1024M on users;
+create user cmz_proy_admin identified by cmz quota unlimited on users;
 grant rol_admin to cmz_proy_admin;
 
 create user cmz_proy_invitado identified by cmz;
 grant rol_invitado to cmz_proy_invitado;
 
+
+prompt conectando como cmz_proy_admin
+connect cmz_proy_admin/cmz
+
+prompt ejecuciòn de s-02
+
+
+prompt ejecuciòn de s-03-carga-inicial.sql
+
 Prompt Listo!
-disconnect;
