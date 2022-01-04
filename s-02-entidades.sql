@@ -17,12 +17,14 @@ create table cliente(
   email varchar2(100) not null,
   telefono number(10) not null,
   rfc varchar2(13) not null,
-  tarjeta_id number(10,0).
+  tarjeta_id number(10,0),
 
   constraint cliente_pk primary key(cliente_id),
   constraint cliente_tarjeta_id_fk foreign key(tarjeta_id)
   references tarjeta(tarjeta_id),
-  constraint cliente_tarjeta_id_uk unique(tarjeta_id)
+  constraint cliente_tarjeta_id_uk unique(tarjeta_id),
+  constraint cliente_curp_uk unique(curp),
+  constraint cliente_rfc_uk unique(rfc)
 );
 
 create table status_pedido(
@@ -44,6 +46,7 @@ create table empleado(
   centro_de_operacion_id number(10,0) not null,
   sueldo_mensual number(10,2) not null,
   sueldo_quincenal generated always as (sueldo_mensual/2) virtual,
+  antiguedad generated always as (sysdate - fecha_ingreso)/365) virtual,
   
   constraint empleado_pk primary key(empleado_id),
   constraint empleado_centro_de_operacion_id foreign key(centro_de_operacion_id)
@@ -53,7 +56,7 @@ create table empleado(
 create table pedido(
   pedido_id number(10,0) not null,
   fecha_status date not null,
-  folio varchar2(40) not null,
+  folio varchar2(13) not null,
   importe number(5,0) not null,
   repartidor_id number(10,0) not null,
   cliente_id number(10,0) not null,
