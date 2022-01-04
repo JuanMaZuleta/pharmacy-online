@@ -16,6 +16,12 @@ cache 6;
 
 
 create sequence seq_pedido
+start with 1
+increment by 3
+nomaxvalue
+nominvalue
+nocycle
+cache 6;
 
 
 create sequence seq_tarjeta
