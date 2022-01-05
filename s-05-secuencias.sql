@@ -5,63 +5,36 @@
 --@Descripción: Creaciòn de secuencias
 
 create sequence seq_empleado 
-start with 1
-increment by 3
-nomaxvalue
-nominvalue
+start with 1001
 nocycle
-cache 6;
+cache 20;
 
 create sequence seq_ubicacion
-start with 1
-increment by 3
-nomaxvalue
-nominvalue
+start with 1001
 nocycle
-cache 6;
+cache 20;
 
 create sequence seq_pedido
-start with 1
-increment by 3
-nomaxvalue
-nominvalue
+start with 1001
 nocycle
-cache 6;
+cache 20;
 
 create sequence seq_tarjeta
-start with 1
-increment by 3
-nomaxvalue
-nominvalue
+start with 801
 nocycle
-cache 6;
+cache 20;
 
 create sequence seq_cliente
-start with 1
-increment by 3
-nomaxvalue
-nominvalue
+start with 1001
 nocycle
-cache 6;
-
-create sequence seq_status_pedido
-start with 1
-increment by 1
-maxvalue 10
-minvalue 1
-nocycle;
+cache 20;
 
 create sequence seq_historico_status
 start with 1
-increment by 1
-maxvalue 50
-minvalue 1
-nocycle;
+nocycle
+cache 20;
 
 create sequence seq_detalle_pedido
-start with 1
-increment by 3
-nomaxvalue
-nominvalue
+start with 1001
 nocycle
 cache 6;
