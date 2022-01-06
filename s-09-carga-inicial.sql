@@ -10,22 +10,22 @@ whenever sqlerror exit rollback
 prompt realizando la carga de datos
 @s-pr-centro_de_operacion.sql
 @s-pr-almacen.sql
+@s-pr-empleado.sql
 @s-pr-farmacia.sql
 @s-pr-oficina.sql
-@s-pr-cliente.sql
-@s-pr-pedido.sql
-@s-pr-detalle_pedido.sql
-@s-pr-empleado.sql
-@s-pr-farmacia_medicamento_presentacion.sql
-@s-pr-presentacion.sql
+@s-pr-operacion.sql
 @s-pr-medicamento.sql
 @s-pr-medicamento_nombre.sql
-@s-pr-medicamento_operacion.sql
-@s-pr-medicamento_presentacion.sql
-@s-pr-operacion.sql
 @s-pr-presentacion.sql
-@s-pr-status_pedido.sql
+@s-pr-medicamento_presentacion.sql
+@s-pr-medicamento_operacion.sql
+@s-pr-farmacia_medicamento_presentacion.sql
 @s-pr-tarjeta.sql
+@s-pr-cliente.sql
+@s-pr-status_pedido.sql
+@s-pr-pedido.sql
+@s-pr-detalle_pedido.sql
+@s-pr-historico_status.sql
 @s-pr-ubicacion.sql
 
 prompt confirmando cambios
