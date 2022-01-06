@@ -8,11 +8,11 @@
 prompt creando roles
 
 create role rol_admin;
-grant create session, create table, create view,create procedure, 
-create sequence to rol_admin;
+grant create session, create table, create view, create procedure, 
+create sequence, create synonym, create public synonym to rol_admin;
 
 create role rol_invitado;
-grant create session to rol_invitado;
+grant create session, create synonym to rol_invitado;
 
 --Crear usuarios
 prompt creando usuarios
@@ -22,5 +22,6 @@ grant rol_admin to cmz_proy_admin;
 
 create user cmz_proy_invitado identified by cmz;
 grant rol_invitado to cmz_proy_invitado;
+
 
 
