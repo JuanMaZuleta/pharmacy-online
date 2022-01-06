@@ -46,7 +46,6 @@ nocycle;
 
 create sequence medicamento_presentacion_seq
 start with 1001
-incremet 
 cache 20
 nocycle;
 
