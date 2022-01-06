@@ -45,7 +45,10 @@ connect cmz_proy_admin/cmz
 prompt ejecuciòn de s-02-entidades.sql
 @s-02-entidades.sql
 
+prompt ejecucion de s-07-sinonimos.sql
+@s-07-sinonimos.sql
 
 prompt ejecuciòn de carga-inicial
+@s-09-carga-inicial.sql
 
 Prompt Listo!
