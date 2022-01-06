@@ -29,10 +29,10 @@ create table empleado(
   empleado_id number(10,0) not null,
   celular number(10,0),
   nombre varchar2(40) not null,
-  apellido_paterno varchar2(40) not null,
-  apellido_materno varchar2(40) not null,
+  ap_paterno varchar2(40) not null,
+  ap_materno varchar2(40) not null,
   rfc varchar2(13) not null,
-  fecha_ingreso date default sysdate,
+  fecha_ingreso date,
   centro_de_operacion_id number(10,0) not null,
   sueldo_mensual number(10,2) not null,
   sueldo_quincenal generated always as (sueldo_mensual/2) virtual,
@@ -61,7 +61,7 @@ create table almacen (
 	almacen_id number(10,0) constraint almacen_pk primary key,
 	tipo char(1) not null,
 	capacidad	number(5,0) not null,
-	distrubucion blob	not null,
+	distribucion blob	not null,
 	almacen_contingencia_id 	number(10,0),
 	constraint almacen_almacen_contingencia_id_fk foreign key(almacen_contingencia_id)
 	references almacen(almacen_id),
@@ -75,7 +75,7 @@ Prompt oficina
 create table oficina (
 	oficina_id number(10,0) constraint oficina_pk primary key,
 	nombre varchar2(100) not null,
-	clave_presupuestal number(20,0) not null,
+	clave_presupuestal varchar2(40) not null,
 	numero_call_center number(20,0) not null,
 	constraint oficina_oficina_id_fk foreign key(oficina_id) 
 	references centro_de_operacion(centro_de_operacion_id)
@@ -93,8 +93,8 @@ Prompt medicamento
 create table medicamento (
 	medicamento_id number(10,0) constraint medicamento_id primary key,
 	precio number(5,0) 	not null,
-	sustancia_activa 	varchar2(100)	not null,
-	descripcion	varchar2(200) not null,
+	sustancia_activa 	varchar2(400)	not null,
+	descripcion	varchar2(400) not null,
   constraint medicamento_precio_chk check(precio>0)
 );
 
@@ -170,8 +170,8 @@ create table cliente(
   cliente_id number(10,0) not null,
   curp varchar2(18),
   direccion varchar2(100),
-  apellido_paterno varchar2(40) not null,
-  apellido_materno varchar2(40) not null,
+  ap_paterno varchar2(40) not null,
+  ap_materno varchar2(40) not null,
   nombre varchar2(40) not null,
   email varchar2(100) not null,
   telefono number(10) not null,
@@ -256,5 +256,4 @@ create table detalle_pedido(
   references pedido(pedido_id),
   constraint detalle_pedido_unidades_chk check(unidades>0)
 );
-
 
