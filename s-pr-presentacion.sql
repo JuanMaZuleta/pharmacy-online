@@ -1,0 +1,10 @@
+insert into presentacion (presentacion_id, cantidad) values (1, 8);
+insert into presentacion (presentacion_id, cantidad) values (2, 16);
+insert into presentacion (presentacion_id, cantidad) values (3, 24);
+insert into presentacion (presentacion_id, cantidad) values (4, 32);
+insert into presentacion (presentacion_id, cantidad) values (5, 40);
+insert into presentacion (presentacion_id, cantidad) values (6, 48);
+insert into presentacion (presentacion_id, cantidad) values (7, 56);
+insert into presentacion (presentacion_id, cantidad) values (8, 64);
+insert into presentacion (presentacion_id, cantidad) values (9, 72);
+insert into presentacion (presentacion_id, cantidad) values (10, 80);
