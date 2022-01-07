@@ -45,6 +45,9 @@ connect cmz_proy_admin/cmz
 prompt ejecuciòn de s-02-entidades.sql
 @s-02-entidades.sql
 
+prompt ejecuciòn de s-05-secuencias.sql
+@s-05-secuencias.sql
+
 prompt ejecucion de s-07-sinonimos.sql
 @s-07-sinonimos.sql
 
