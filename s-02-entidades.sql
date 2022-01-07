@@ -92,7 +92,6 @@ Prompt medicamento
 
 create table medicamento (
 	medicamento_id number(10,0) constraint medicamento_id primary key,
-	precio number(5,0) 	not null,
 	sustancia_activa 	varchar2(400)	not null,
 	descripcion	varchar2(400) not null,
   constraint medicamento_precio_chk check(precio>0)
@@ -112,6 +111,7 @@ Prompt tabla medicamento_presentacion
 
 create table medicamento_presentacion(
 	medicamento_presentacion_id number(10,0) constraint medicamento_presentacion_pk primary key,
+	precio 			    number(5,0) not null,
 	medicamento_id constraint medpres_medicamento_id_fk 
 	references medicamento(medicamento_id),
 	presentacion_id constraint medpres_presentacion_id_fk
