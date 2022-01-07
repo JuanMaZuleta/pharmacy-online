@@ -65,14 +65,15 @@ order by cliente_id asc;
 
 --Vista para mostrar los medicamentos en sus diferentes presentaciones y nombres
 create or replace view v_medicamento_presentacion as
-select mn.nombre,p.cantidad,m.precio,m.sustancia_activa,m.descripcion
+select m.medicamento_id,mn.nombre,p.cantidad presentacion,m.precio,
+  m.sustancia_activa,m.descripcion
 from medicamento m 
 join medicamento_nombre mn 
-on m.medicamento_id=mn.medicamento_id
+  on m.medicamento_id=mn.medicamento_id
 join medicamento_presentacion mp 
-on m.medicamento_id=mp.medicamento_id
-left join presentacion p 
-on mp.presentacion_id=p.presentacion_id;
+  on m.medicamento_id=mp.medicamento_id
+join presentacion p                       --comentar left join
+  on mp.presentacion_id=p.presentacion_id;
 
 --Vista para revisión de historico del estatus de los pedidos
 create or replace view v_historico_pedido as 
