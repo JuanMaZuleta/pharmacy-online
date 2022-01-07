@@ -15,7 +15,7 @@ nocycle
 cache 20;
 
 create sequence seq_pedido
-start with 1001
+start with 1
 nocycle
 cache 20;
 
