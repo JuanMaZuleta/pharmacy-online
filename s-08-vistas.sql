@@ -75,11 +75,12 @@ join medicamento_presentacion mp
 join presentacion p                       --comentar left join
   on mp.presentacion_id=p.presentacion_id;
 
---Vista para revisión de historico del estatus de los pedidos
-create or replace view v_historico_pedido as 
-select p.folio, p.importe, s.clave,h.fecha_status
+---Vista para revisión de historico del estatus de los pedidos
+select p.pedido_id,p.folio, importe(p.folio) importe, sp.descripcion status,
+  hs.fecha_status
 from pedido p
-join historico_status h
-on p.pedido_id=h.pedido_id
-left join status_pedido s
-on h.status_pedido_id=s.status_pedido_id;
+join historico_status hs
+  on p.pedido_id=hs.pedido_id
+left join status_pedido sp
+  on hs.status_pedido_id=sp.status_pedido_id
+order by p.pedido_id;
