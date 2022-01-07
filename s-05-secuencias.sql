@@ -45,12 +45,12 @@ cache 20
 nocycle;
 
 create sequence medicamento_presentacion_seq
-start with 1001
+start with 1
 cache 20
 nocycle;
 
 create sequence medicamento_seq
-start with 501
+start with 1
 increment by 1
 cache 20
 nocycle;
