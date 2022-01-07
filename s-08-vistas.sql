@@ -33,7 +33,7 @@ where p.status_pedido_id=(
 --Vista para mostrar el resumen de la informacion de los pedidos cancelados
 create or replace view v_pedidos_cancelados as 
 select c.cliente_id,c.nombre cliente,c.ap_paterno,p.folio folio_compra,
-  mn.nombre medicamento,pre.cantidad presentacion,dp.unidades,m.precio, 
+  mn.nombre medicamento,pre.cantidad presentacion,dp.unidades,mp.precio, 
   importe (p.folio) importe_total,f.farmacia_id,co.direccion ubicacion_farmacia
 from cliente c 
 join pedido p
