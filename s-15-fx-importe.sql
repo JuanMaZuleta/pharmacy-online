@@ -1,11 +1,11 @@
 --Función para obtener el importe de un pedido
 create or replace function importe(
   p_folio varchar2
-) return varchar2 is
+) return number is
   --Declaracion de variables
-  v_importe pedido.importe%type;
+  v_importe number(10,0);
 begin 
-  select sum(m.precio)
+  select sum(m.precio*dp.unidades)
   into v_importe
   from pedido p 
   join detalle_pedido dp 
