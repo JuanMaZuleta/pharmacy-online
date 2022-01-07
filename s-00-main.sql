@@ -51,6 +51,9 @@ prompt ejecuciòn de s-05-secuencias.sql
 prompt ejecucion de s-07-sinonimos.sql
 @s-07-sinonimos.sql
 
+prompt ejecucion de s-15-fx-importe.sql
+@s-15-fx-importe.sql
+
 prompt ejecuciòn de carga-inicial
 @s-09-carga-inicial.sql
 
