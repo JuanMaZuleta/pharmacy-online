@@ -200,7 +200,6 @@ create table pedido(
   pedido_id number(10,0) not null,
   fecha_status date not null,
   folio varchar2(13) not null,
-  importe number(5,0) not null,
   repartidor_id number(10,0) not null,
   cliente_id number(10,0) not null,
   status_pedido_id number(10,0) not null,
