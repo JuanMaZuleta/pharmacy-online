@@ -65,7 +65,7 @@ order by cliente_id asc;
 
 --Vista para mostrar los medicamentos en sus diferentes presentaciones y nombres
 create or replace view v_medicamento_presentacion as
-select m.medicamento_id,mn.nombre,p.cantidad presentacion,m.precio,
+select m.medicamento_id,mn.nombre,p.cantidad presentacion,mp.precio,
   m.sustancia_activa,m.descripcion
 from medicamento m 
 join medicamento_nombre mn 
