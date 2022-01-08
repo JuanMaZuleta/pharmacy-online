@@ -30,7 +30,7 @@ nocycle
 cache 20;
 
 create sequence seq_historico_status
-start with 1
+start with 1751
 nocycle
 cache 20;
 
