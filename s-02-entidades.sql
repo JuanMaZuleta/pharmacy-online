@@ -93,7 +93,8 @@ Prompt medicamento
 create table medicamento (
 	medicamento_id number(10,0) constraint medicamento_id primary key,
 	sustancia_activa 	varchar2(400)	not null,
-	descripcion	varchar2(400) not null
+	descripcion	varchar2(400) not null,
+	es_riego  number(1,0) not null
 );
 
 Prompt tabla medicamento_nombre

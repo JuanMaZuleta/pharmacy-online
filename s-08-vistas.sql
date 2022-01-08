@@ -2,34 +2,6 @@
 --@Fecha creación: 02/01/2022
 --@Descripción: Vistas para el caso de estudio "Pharmacy Online"
 
-
---COMENTAR VISTA
---Vista para mostrar resumen de la información de un pedido 
-create or replace view v_pedido_completado as 
-select c.nombre,c.ap_paterno,f.farmacia_id,co.direccion ubicacion_farmacia,
- dp.unidades, mn.nombre,pre.cantidad,m.precio, p.folio folio_compra,p.importe
-from cliente c 
-join pedido 
-on c.cliente_id=p.cliente_id
-join detalle_pedido dp 
-on p.pedido_id=dp.pedido_id
-join farmacia f 
-on dp.farmacia_id=f.farmacia_id
-join centro_de_operacion co. 
-on f.farmacia_id=co.centro_de_operacion_id
-join medicamento_presentacion mp 
-on dp.medicamento_presentacion_id=mp.medicamento_presentacion_id
-join medicamento m 
-on mp.medicamento_id=m.medicamento_id
-join medicamento_nombre mn 
-on m.medicamento_id=mn.medicamento_nombre_id
-left join presentacion pre 
-on mp.presentacion_id=pre,presentacion_id
-where p.status_pedido_id=(
-  select status_pedido_id from status_pedido where clave='ENTREGADO'
-);
-
-
 --Vista para mostrar el resumen de la informacion de los pedidos cancelados
 create or replace view v_pedidos_cancelados as 
 select c.cliente_id,c.nombre cliente,c.ap_paterno,p.folio folio_compra,
@@ -54,13 +26,8 @@ join medicamento_nombre mn
   on m.medicamento_id=mn.medicamento_nombre_id
 join presentacion pre 
   on mp.presentacion_id=pre.presentacion_id
-where sp.descripcion = 'CANCELADO'
+where sp.descripcion = 'CANCELADO' or sp.descripcion ='DEVUELTO'
 order by cliente_id asc;
-
-
-
-
-
 
 
 --Vista para mostrar los medicamentos en sus diferentes presentaciones y nombres

@@ -45,7 +45,6 @@ create index almacen_almacen_contigencia_id_ix on almacen(almacen_contigencia_id
 
 --Índices en tabla OFICINA
 create index oficina_nombre_ix on oficina(upper(nombre));
---create unique index oficina_clave_presupuestal_iuk on oficina(clave_presupuestal);
 
 --Índices en tabla OPERACION
 create index operacion_almacen_id_ix on operacion(almacen_id);
@@ -62,9 +61,6 @@ create index medicamento_operacion_operacion_id_ix on medicamento_operacion(oper
 
 --Índices en tabla MEDICAMENTO_PRESENTACION
 create index medicamento_presentacion_medicamento_id_ix on medicamento_presentacion(medicamento_id);
-
---Índices en tabla MEDICAMENTO
---create index medicamento_precio_ix on medicamento(avg(precio)); Si existe consulta
 
 --Índices MEDICAMENTO_NOMBRE
 create index medicamento_nombre_medicamento_id_ix on medicamento_nombre(medicamento_id);
