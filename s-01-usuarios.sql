@@ -12,7 +12,7 @@ prompt creando roles
 
 create role rol_admin;
 grant create session, create table, create view, create procedure, 
-create sequence, create synonym, create public synonym to rol_admin;
+create sequence, create synonym, create public synonym, create trigger to rol_admin;
 
 create role rol_invitado;
 grant create session, create synonym to rol_invitado;
