@@ -131,17 +131,6 @@ create table farmacia_medicamento_presentacion (
   constraint farmedpres_unidades_chk check (unidades>=0)
 );
 
-Prompt tabla farmacia_medicamento_presentacion
-
-create table farmacia_medicamento_presentacion (
-  unidades number(5,0) not null,
-	medicamento_presentacion_id constraint farmedpres_medicamento_presentacion_id_fk
-	references medicamento_presentacion(medicamento_presentacion_id),
-	farmacia_id	constraint farmedpres_farmacia_id_fk
-	references centro_de_operacion(centro_de_operacion_id),
-	constraint farmedpres_pk primary key(medicamento_presentacion_id,farmacia_id),
-  constraint farmedpres_unidades_chk check (unidades>=0)
-);
 
 Prompt tabla operacion
 
