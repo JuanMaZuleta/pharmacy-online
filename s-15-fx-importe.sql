@@ -5,7 +5,7 @@ create or replace function importe(
   --Declaracion de variables
   v_importe number(10,0);
 begin 
-  select sum(m.precio*dp.unidades)
+  select sum(mp.precio*dp.unidades)
   into v_importe
   from pedido p 
   join detalle_pedido dp 
