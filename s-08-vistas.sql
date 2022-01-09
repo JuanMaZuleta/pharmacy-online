@@ -2,8 +2,8 @@
 --@Fecha creación: 02/01/2022
 --@Descripción: Vistas para el caso de estudio "Pharmacy Online"
 
---Vista para mostrar el resumen de la informacion de los pedidos cancelados
-create or replace view v_pedidos_cancelados as 
+--Vista para mostrar el resumen de las perdidas generadas por los pedidos cancelados o devueltos
+create or replace view v_perdida as 
 select c.cliente_id,c.nombre cliente,c.ap_paterno,p.folio folio_compra,
   mn.nombre medicamento,pre.cantidad presentacion,dp.unidades,mp.precio, 
   importe (p.folio) importe_total,f.farmacia_id,co.direccion ubicacion_farmacia
