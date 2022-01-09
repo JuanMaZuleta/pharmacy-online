@@ -59,35 +59,37 @@ from dual;
 
 
 
-----PENDIENTES  
-
-/*7.La empresa desea regalar un artículo a todos los clientes que cumplan con 
+/*7. Generar un reporte de todos los clientes que cumplan con 
 alguna de las siguientes condiciones:
-a. Que el cliente haya realizado mas de 5 pedidos 
-b. Que el monto total de todos los productos que haya comprado supere 
-a los $3,000,000.
-Generar una sentencia SQL empleando operadores del álgebra relacional 
-(Set operators). Determine id, nombre, apellidos, numero de productos
-comprados y monto total.*/
-
+a. Que el cliente haya realizado mas de 3 pedidos 
+b. Que el monto total de todos pedidos supere a los $550,000.*/
 select c.cliente_id,c.nombre,c.ap_paterno,c.ap_materno,
-  count (*) num_pedidos
+  count (*) num_pedidos, sum(importe(p.folio)) compra
 from cliente c 
 join pedido p
   on c.cliente_id=p.cliente_id
 group by (c.cliente_id,c.nombre,c.ap_paterno,c.ap_materno)
-having count(*) = 3
+having count(*) > 3
 union
 select c.cliente_id,c.nombre,c.ap_paterno,c.ap_materno,
-  sum(importe(p.folio))
+  count (*) num_pedidos, sum(importe(p.folio)) compra
 from cliente c 
 join pedido p
   on c.cliente_id=p.cliente_id
 group by (c.cliente_id,c.nombre,c.ap_paterno,c.ap_materno)
 having sum(importe(p.folio)) > 550000;
 
+/*
+Generar una consulta que determine la perdida màxima y mìnima generada por los
+pedidos cancelados o devueltos*/
+select 
+  min(perdida) perdida_minima, 
+  max(perdida) perdida_maxima
+from (select v_perdidas.farmacia_id,sum(v_perdidas.importe_total) perdida
+  from v_perdidas
+  group by (v_perdidas.farmacia_id));
 
-
+----PENDIENTES
 
   
 /*1. Seleccionar el número total de pedidos cancelados realizados en el 2015, 
