@@ -246,7 +246,7 @@ insert into medicamento_presentacion (medicamento_presentacion_id, precio, medic
 insert into medicamento_presentacion (medicamento_presentacion_id, precio, medicamento_id, presentacion_id) values (medicamento_presentacion_seq.nextval, 826, 246, 7);
 insert into medicamento_presentacion (medicamento_presentacion_id, precio, medicamento_id, presentacion_id) values (medicamento_presentacion_seq.nextval, 89, 247, 3);
 insert into medicamento_presentacion (medicamento_presentacion_id, precio, medicamento_id, presentacion_id) values (medicamento_presentacion_seq.nextval, 290, 248, 1);
-insert into medicamento_presentacion (medicamento_presentacion_id, precio, medicamento_id, presentacion_id) values (medicamento_presentacion_seq.nextval, 751, 249, 2);
+insert into medicamento_presentacion (medicamento_presentacion_id, precio, medicamento_id, presentacion_id) values (medicamento_presentacion_seq.nextval, 751, 249, 4);
 insert into medicamento_presentacion (medicamento_presentacion_id, precio, medicamento_id, presentacion_id) values (medicamento_presentacion_seq.nextval, 444, 250, 7);
 insert into medicamento_presentacion (medicamento_presentacion_id, precio, medicamento_id, presentacion_id) values (medicamento_presentacion_seq.nextval, 139, 251, 8);
 insert into medicamento_presentacion (medicamento_presentacion_id, precio, medicamento_id, presentacion_id) values (medicamento_presentacion_seq.nextval, 902, 252, 10);

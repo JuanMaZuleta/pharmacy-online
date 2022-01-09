@@ -85,9 +85,13 @@ pedidos cancelados o devueltos*/
 select 
   min(perdida) perdida_minima, 
   max(perdida) perdida_maxima
-from (select v_perdidas.farmacia_id,sum(v_perdidas.importe_total) perdida
-  from v_perdidas
-  group by (v_perdidas.farmacia_id));
+from (select v_pedidos_cancelados_devueltos.farmacia_id,sum(v_pedidos_cancelados_devueltos.importe_total) perdida
+  from v_pedidos_cancelados_devueltos
+  group by (v_pedidos_cancelados_devueltos.farmacia_id));
+
+
+
+select * from demandas_ext;
 
 ----PENDIENTES
 

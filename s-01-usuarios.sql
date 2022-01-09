@@ -4,9 +4,6 @@
 --@Fecha creación: 03/01/2022
 --@Descripción: Creaciòn de usuarios y roles
 
---Conectando como usuario sys 
-connect sys as sysdba/system
-
 --Creación de roles. 
 prompt creando roles
 

@@ -2,8 +2,8 @@
 --@Fecha creación: 02/01/2022
 --@Descripción: Vistas para el caso de estudio "Pharmacy Online"
 
---Vista para mostrar el resumen de las perdidas generadas por los pedidos cancelados o devueltos
-create or replace view v_perdida as 
+--Vista para mostrar el resumen de los pedidos cancelados o devueltos
+create or replace view v_pedidos_cancelados_devueltos as 
 select c.cliente_id,c.nombre cliente,c.ap_paterno,p.folio folio_compra,
   mn.nombre medicamento,pre.cantidad presentacion,dp.unidades,mp.precio, 
   importe (p.folio) importe_total,f.farmacia_id,co.direccion ubicacion_farmacia
@@ -29,7 +29,6 @@ join presentacion pre
 where sp.descripcion = 'CANCELADO' or sp.descripcion ='DEVUELTO'
 order by cliente_id asc;
 
-
 --Vista para mostrar los medicamentos en sus diferentes presentaciones y nombres
 create or replace view v_medicamento_presentacion as
 select m.medicamento_id,mn.nombre,p.cantidad presentacion,mp.precio,
@@ -39,8 +38,9 @@ join medicamento_nombre mn
   on m.medicamento_id=mn.medicamento_id
 join medicamento_presentacion mp 
   on m.medicamento_id=mp.medicamento_id
-join presentacion p                       --comentar left join
-  on mp.presentacion_id=p.presentacion_id;
+join presentacion p                       
+  on mp.presentacion_id=p.presentacion_id
+order by medicamento_id;
 
 ---Vista para revisión de historico del estatus de los pedidos
 select p.pedido_id,p.folio, importe(p.folio) importe, sp.descripcion status,

@@ -3,6 +3,8 @@
 --             Zuleta Ceja Juan Manuel
 --@Fecha creación: 04/01/2022
 --@Descripción: Invocaciòn de scripts
+--Conectando como usuario sys 
+connect sys as sysdba/system
 
 set serveroutput on
 declare
