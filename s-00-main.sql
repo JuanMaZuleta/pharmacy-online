@@ -37,6 +37,9 @@ begin
 end if;
 end;
 /
+drop role rol_admin;
+drop role rol_invitado;
+
 
 prompt ejecuciòn de s-01-usuarios.sql
 @s-01-usuarios.sql
