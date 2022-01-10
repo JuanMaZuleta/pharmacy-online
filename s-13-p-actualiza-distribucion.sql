@@ -3,13 +3,19 @@
 --@Descripción: Función que carga un archivo jpg al campo distribución en almacén
 
 prompt Configurando directorio
-conn sys/system as sysdba
+connect sys/system as sysdba
 create or replace directory planos_dir as '/tmp/proyecto/planos';
 grant read, write on directory planos_dir to cmz_proy_admin;
 
 prompt Creando procedimiento con usuario cmz_proy_admin
-conn cmz_proy_admin/cmz
+connect cmz_proy_admin/cmz
 show user
+
+Prompt creando el directorio /tmp/proyecto en caso de no existir
+!mkdir -p /tmp/proyecto
+
+Prompt moviendo la carpeta de imagenes a directorio
+!cp -r planos /tmp/proyecto
 
 set serveroutput on
 create or replace procedure sp_inserta_plano
@@ -64,3 +70,4 @@ end if;
 end;
 /
 show errors
+
