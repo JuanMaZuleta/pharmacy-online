@@ -50,7 +50,7 @@ join medicamento_nombre mn
 where dp.medicamento_presentacion_id=387 and dp.farmacia_id=1 and mn.medicamento_nombre_id=887;
 
 dbms_output.put_line('Ahora se tienen '||v_unidades_nuevas||' en total.');
-
+commit;
 end;
 /
 show errors
