@@ -35,7 +35,7 @@ create private temporary table ora$ptt_medicamento_presentacion(
   nombre_medicamento varchar2(100),
 	precio number(5,0),
 	presentacion varchar2(100)
-) on commit drop definition;
+) on commit preserve definition;
 
 insert into ora$ptt_medicamento_presentacion(
   medicamento_id, nombre_medicamento, precio, 
