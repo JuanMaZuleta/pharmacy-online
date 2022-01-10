@@ -158,6 +158,18 @@ create table operacion (
 	constraint operecion_tipo_chk check (tipo in('E','S'))
 );
 
+Prompt tabla operacion_riesgo
+
+create table operacion_riesgo(
+  operacion_riesgo_id number(10,0) not null,
+  fecha_evento date not null,
+  usuario varchar2(40) not null,
+  descripcion varchar(400) not null,
+  unidades number(5,0) not null,
+  constraint operacion_riesgo_pk primary key (operacion_riesgo_id) 
+)
+;
+
 Prompt tabla medicamento_operacion
 
 create table medicamento_operacion (
