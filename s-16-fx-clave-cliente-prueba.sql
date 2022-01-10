@@ -15,12 +15,13 @@ from cliente
 where cliente_id=1;
 
 dbms_output.put_line('Se generara la clave al cliente con id=1 e email: '
-										||v_email);
+		||v_email);
 
 select clave_cliente(v_email) into v_clave from dual;
 
 dbms_output.put_line('La clave para el cliente es: '
-										||v_clave);
+		||v_clave);
+commit;
 end;
 / 
 show errors
