@@ -45,7 +45,7 @@ create table consulta_5 as
 select cliente_id, c.nombre nombre_cliente, c.ap_paterno, c.ap_materno,
   p.folio folio_pedido, e.nombre nombre_responsable, 
   e.ap_paterno ap_paterno_responsable, e.ap_materno ap_materno_responsable,
-  centro_de_operacion_id, co.direccion direccion centro_de_operacion
+  centro_de_operacion_id, co.direccion direccion_centro_de_operacion
 from cliente c
 natural join pedido p
 join empleado e
