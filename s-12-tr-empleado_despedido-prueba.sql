@@ -70,7 +70,7 @@ begin
       ||v_liquidacion
       || ', se esperaba 60000');
     else
-      dbms_output.put_line('valor para columna tipo_evento correcta.');
+      dbms_output.put_line('valor para columna liquidacion correcta.');
     end if;
 
     dbms_output.put_line('Valor para columna descripcion: ' 
