@@ -23,9 +23,21 @@ create global temporary table centro_operacion_total_temp(
 	numero_call_center number(20,0)
 ) on commit preserve rows;
 
+insert into centro_operacion_total_temp(
+  centro_de_operacion_id, farmacia_id, almacen_id, oficina_id)
+  values (1,1,2,5);
+     
+commit;
+
+
 create private temporary table ora$ptt_medicamento_presentacion(
   medicamento_id number(10,0),
   nombre_medicamento varchar2(100),
 	precio number(5,0),
 	presentacion varchar2(100)
 ) on commit drop definition;
+
+insert into ora$ptt_medicamento_presentacion(
+  medicamento_id, nombre_medicamento, precio, 
+  presentacion) 
+  values (10, 42, 99, 'tabletas'); 
