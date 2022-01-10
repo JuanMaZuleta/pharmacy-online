@@ -2,7 +2,7 @@
 --@Fecha creación: 03/01/2022
 --@Descripción: Creación de tablas temporales
 
-create global temporary table centro_operacion_total_tempo(
+create global temporary table centro_operacion_total_temp(
   centro_de_operacion_id  number(10,0),
 	clave varchar2(6) ,
 	direccion varchar2(200) ,
