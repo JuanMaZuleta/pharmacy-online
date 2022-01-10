@@ -91,9 +91,10 @@ prompt copiando el archivo csv a /tmp/demandas
 --Otorgando permisos
 !chmod 777 /tmp/demandas
 
+/*
 prompt mostrando los datos
 set linesize window
 col descripcion format a20
 col estado format a20
 
-select * from demandas_ext;
+select * from demandas_ext;*/
