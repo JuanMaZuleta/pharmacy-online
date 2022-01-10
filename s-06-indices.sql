@@ -49,8 +49,10 @@ create index operacion_almacen_id_ix on operacion(almacen_id);
 create index operacion_responsable_id_ix on operacion(responsable_id);
 
 --Índices en tabla MEDICAMENTO_OPERACION
-create index medicamento_operacion_almacen_id_ix on medicamento_operacion(almacen_id);
-create index medicamento_operacion_operacion_id_ix on medicamento_operacion(operacion_id);
+create index medicamento_operacion_medicamento_presentacion_id_ix 
+  on medicamento_operacion(medicamento_presentacion_id);
+create index medicamento_operacion_operacion_id_ix 
+  on medicamento_operacion(operacion_id);
 
 --Índices en tabla MEDICAMENTO_PRESENTACION
 create index medicamento_presentacion_medicamento_id_ix on medicamento_presentacion(medicamento_id);
