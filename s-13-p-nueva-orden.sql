@@ -29,11 +29,13 @@ v_sql_pedido:='insert into pedido (pedido_id,fecha_status,folio,repartidor_id,cl
             ||'values (:ph_pedido_id,sysdate,:ph_folio,dbms_random.value(1,1000),:ph_cliente_id,1)';
 execute immediate v_sql_pedido using v_pedido_seq,v_folio,p_cliente_id;
 
+--SQL para inserción en tabla detalle pedido
 v_sql_detalle_pedido:='insert into detalle_pedido ( '
                     ||'detalle_pedido_id,unidades,farmacia_id,medicamento_presentacion_id,pedido_id)'
                     ||'values(:ph_detalle_pedido_id,:ph_unidades_mp_1,:ph_farmacia_id,:ph_medicamento_presentacion_1,:ph_pedido_id)';
 execute immediate v_sql_detalle_pedido using v_detalle_pedido_seq,p_unidades_mp,v_farmacia_id, p_medicamento_presentacion,v_pedido_seq;
 
+--SQL para inserción en historico 
 v_sql_historico:='insert into historico_status ( '
                 ||'historico_status_id,fecha_status,pedido_id,status_pedido_id)'
                 ||'values(:ph_historico_id,sysdate,:ph_pedido_id,1)';
