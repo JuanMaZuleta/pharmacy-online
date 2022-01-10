@@ -48,7 +48,7 @@ begin
   if v_registro_encontrado = 0
 --Si no se encuentra el registro 
   then
---Se guardan las variables con las que se compruba el funcionamiento del 
+--Se guardan las variables con las que se comprueba el funcionamiento del 
 --trigger
     select usuario, descripcion, liquidacion into v_usuario, v_descripcion,
       v_liquidacion
