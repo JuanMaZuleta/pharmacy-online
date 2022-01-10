@@ -36,7 +36,6 @@ create table empleado(
   centro_de_operacion_id number(10,0) not null,
   sueldo_mensual number(10,2) not null,
   sueldo_quincenal generated always as (sueldo_mensual/2) virtual,
-  --antiguedad generated always as (sysdate - fecha_ingreso)/365 virtual,
   constraint empleado_pk primary key(empleado_id),
   constraint empleado_centro_de_operacion_id_fk foreign key(centro_de_operacion_id)
   references centro_de_operacion(centro_de_operacion_id)
