@@ -56,6 +56,9 @@ prompt ejecucion de s-04-tablas-externas.sql
 prompt ejecuciòn de s-05-secuencias.sql
 @s-05-secuencias.sql
 
+prompt ejecucion de s-06-indices.sql
+@s-06-indices.sql
+
 prompt ejecucion de s-07-sinonimos.sql
 @s-07-sinonimos.sql
 
@@ -76,16 +79,6 @@ prompt ejecuciòn de carga-inicial
 
 prompt ejecucion de s-10-consultas.sql
 @s-10-consultas.sql
-
-prompt ejecucion de triggers
-prompt tr-actual_unidades
-@s-11-tr-actual_unidades.sql
-
-prompt tr-empleado_despedido
-@s-11-tr-empleado_despedido.sql
-
-prompt tr-operacion_riesgo
-@s-11-tr-operacion_riesgo.sql
 
 prompt pruebas de procemdimientos 
 prompt p-nueva-orden
