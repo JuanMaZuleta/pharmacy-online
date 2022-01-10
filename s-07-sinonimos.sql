@@ -6,56 +6,59 @@
 
 connect cmz_proy_admin/cmz
 prompt Creando sinonimos del usuario admin
-create or replace public synonym s_cliente for cliente;
-create or replace public synonym s_ubicacion for ubicacion;
-create or replace public synonym s_tarjeta for tarjeta;
+create or replace public synonym comprador for cliente;
+create or replace public synonym lugar for ubicacion;
+create or replace public synonym tarjeta_de_pago for tarjeta;
 
 prompt Dando permisos al usuario invitado
+grant select on cliente to cmz_proy_invitado;
+grant select on ubicacion to cmz_proy_invitado;
+grant select on tarjeta to cmz_proy_invitado;
 grant select on empleado to cmz_proy_invitado;
 grant select on medicamento to cmz_proy_invitado;
 grant select on centro_de_operacion to cmz_proy_invitado;
 
 connect cmz_proy_invitado/cmz
-prompt Creando sinonimos del usuario guest
-create or replace synonym s_empleado for cmz_proy_admin.empleado;
-create or replace synonym s_medicamento for cmz_proy_admin.medicamento;
-create or replace synonym s_cen_de_op for cmz_proy_admin.centro_de_operacion;
+prompt Creando sinonimos del usuario invitado
+create or replace synonym empleado for cmz_proy_admin.empleado;
+create or replace synonym medicamento for cmz_proy_admin.medicamento;
+create or replace synonym centro_de_operacion for cmz_proy_admin.centro_de_operacion;
 
 connect cmz_proy_admin/cmz
 prompt Creando sinonimos con prefijo
 create or replace synonym pr_centro_de_operacion 
-  for cmz_proy_admin.centro_de_operacion;
+  for centro_de_operacion;
 create or replace synonym pr_empleado 
-  for cmz_proy_admin.empleado;
+  for empleado;
 create or replace synonym pr_farmacia 
-  for cmz_proy_admin.farmacia;
+  for farmacia;
 create or replace synonym pr_almacen 
-  for cmz_proy_admin.almacen;
+  for almacen;
 create or replace synonym pr_oficina 
-  for cmz_proy_admin.oficina;
+  for oficina;
 create or replace synonym pr_operacion 
-  for cmz_proy_admin.operacion;
+  for operacion;
 create or replace synonym pr_medicamento_operacion 
-  for cmz_proy_admin.medicamento_operacion;
+  for medicamento_operacion;
 create or replace synonym pr_farmacia_medicamento_operacion 
-  for cmz_proy_admin.farmacia_medicamento_operacion;
+  for farmacia_medicamento_operacion;
 create or replace synonym pr_medicamento_presentacion 
-  for cmz_proy_admin.medicamento_presentacion;
+  for medicamento_presentacion;
 create or replace synonym pr_medicamento 
-  for cmz_proy_admin.medicamento;
+  for medicamento;
 create or replace synonym pr_presentacion 
-  for cmz_proy_admin.presentacion;
+  for presentacion;
 create or replace synonym pr_medicamento_nombre 
-  for cmz_proy_admin.medicamento_nombre;
+  for medicamento_nombre;
 create or replace synonym pr_pedido 
-  for cmz_proy_admin.pedido;
+  for pedido;
 create or replace synonym pr_cliente 
-  for cmz_proy_admin.cliente;
+  for cliente;
 create or replace synonym pr_tarjeta 
-  for cmz_proy_admin.tarjeta;
+  for tarjeta;
 create or replace synonym pr_detalle_pedido 
-  for cmz_proy_admin.detalle_pedido;
+  for detalle_pedido;
 create or replace synonym pr_historico_status 
-  for cmz_proy_admin.historico_status;
+  for historico_status;
 create or replace synonym pr_status_pedido
-  for cmz_proy_admin.status_pedido;
+  for status_pedido;
