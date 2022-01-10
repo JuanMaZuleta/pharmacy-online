@@ -5,9 +5,12 @@
 create or replace procedure sp_nueva_orden 
 (p_cliente_id in number, p_medicamento_presentacion in number,p_unidades_mp in number) is
 
+--Variables para ejecutar sql dinámico 
 v_sql_pedido varchar2(4000);
 v_sql_detalle_pedido varchar2(4000);
 v_sql_historico varchar2(4000);
+
+--Variables para insersión de nueva orden
 v_pedido_seq number;
 v_detalle_pedido_seq number;
 v_historico_seq number;
@@ -21,6 +24,7 @@ select seq_historico_status.nextval into v_historico_seq from dual;
 select folio_pedido(sysdate) into v_folio from dual;
 select farmacia_id into v_farmacia_id from farmacia where gerente_id=floor(dbms_random.value(1,500));
 
+--SQL para inserción en tabla pedido 
 v_sql_pedido:='insert into pedido (pedido_id,fecha_status,folio,repartidor_id,cliente_id,status_pedido_id)'
             ||'values (:ph_pedido_id,sysdate,:ph_folio,dbms_random.value(1,1000),:ph_cliente_id,1)';
 execute immediate v_sql_pedido using v_pedido_seq,v_folio,p_cliente_id;
