@@ -2,7 +2,7 @@
 -- Juan Manuel Zuleta Ceja
 -- Pedro Martínez Alvarez
 -- @Fecha creación: 04/01/2022
--- @Descripción: Ejecuci
+-- @Descripción: Ejecución de pruebas y triggers
 
 prompt prueba para p-nueva-orden
 @s-14-p-nueva-orden-prueba.sql
