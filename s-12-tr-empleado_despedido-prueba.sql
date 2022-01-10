@@ -81,7 +81,7 @@ begin
   --si se llega a este punto quiere decir que todo está OK, 
   --se indica que la prueba fue exitosa.
   dbms_output.put_line('OK, prueba exitosa.');
-
+  commit;
 end;
 /
 
