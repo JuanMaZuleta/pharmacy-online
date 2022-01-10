@@ -10,7 +10,6 @@ create unique index empleado_rfc_iuk on empleado(rfc);
 create index empleado_centro_operacion_id_ix on empleado(centro_de_operacion_id);
 
 --Índices en tabla PEDIDO
-create unique index pedido_folio_iuk on pedido(folio);
 create index pedido_repartidor_id_ix on pedido(repartidor_id);
 create index pedido_cliente_id_ix on pedido(cliente_id);
 
@@ -19,7 +18,6 @@ create index tarjeta_numero_ix on tarjeta(numero);
 
 --Índices en tabla CLIENTE
 create index cliente_email_ix on cliente(email);
-create index cliente_rfc_ix on cliente(rfc);
 create index cliente_tarjeta_id_ix on cliente(tarjeta_id);
 create index cliente_nombre_ix on cliente(upper(nombre));
 
@@ -31,12 +29,9 @@ create index detalle_pedido_farmacia_id_ix on detalle_pedido(farmacia_id);
 create index detalle_pedido_medicamento_pres_id_ix on detalle_pedido(medicamento_presentacion_id);
 create index detalle_pedido_pedido_id_ix on detalle_pedido(pedido_id);
 
---Índices en tabla CENTRO_DE_OPERACION
-create unique index centro_operacion_clave_iuk on centro_de_operacion(clave);
-
 --Índices en tabla FARMACIA
 create unique index farmacia_rfc_fiscal_iuk on farmacia(rfc_fiscal);
-create index farmacia_gerente_id_ix on farmacia(gerente_id);
+--create index farmacia_gerente_id_ix on farmacia(gerente_id);
 
 --Índices en tabla ALMACEN
 create index almacen_almacen_contigencia_id_ix on almacen(almacen_contigencia_id);
