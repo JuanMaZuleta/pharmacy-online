@@ -16,7 +16,7 @@ from almacen
 where almacen_id=502;
 
 dbms_output.put_line('El tamanio de la imagen del plano es: '|| v_tamanio||'.');
-
+commit;
 end;
 / 
 show errors
