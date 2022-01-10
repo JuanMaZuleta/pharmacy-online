@@ -80,11 +80,14 @@ prompt tr-empleado_despedido
 prompt tr-operacion_riesgo
 @s-11-tr-operacion_riesgo.sql
 
-prompt ejecución de pruebas para triggers
-prompt prueba para tr-actual_unidades
-@s-12-tr-actual_unidades-prueba.sql
+prompt pruebas de procemdimientos 
+prompt p-nueva-orden
+@s-13-p-nueva-orden.sql
 
-prompt prueba para tr-empleado_despedido
-@s-12-tr-empleado_despedido-prueba.sql
+prompt p-promocion
+@s-13-p-promocion.sql
+
+prompt p-actualiza-distribucion
+@s-13-p-actualiza-distribucion.sql
 
 Prompt Listo!
