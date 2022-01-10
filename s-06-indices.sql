@@ -34,7 +34,7 @@ create unique index farmacia_rfc_fiscal_iuk on farmacia(rfc_fiscal);
 --create index farmacia_gerente_id_ix on farmacia(gerente_id);
 
 --Índices en tabla ALMACEN
-create index almacen_almacen_contigencia_id_ix on almacen(almacen_contigencia_id);
+create index almacen_almacen_contigencia_id_ix on almacen(almacen_contingencia_id);
 
 --Índices en tabla OFICINA
 create index oficina_nombre_ix on oficina(upper(nombre));
