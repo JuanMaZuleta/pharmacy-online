@@ -47,6 +47,9 @@ connect cmz_proy_admin/cmz
 prompt ejecuciòn de s-02-entidades.sql
 @s-02-entidades.sql
 
+prompt ejecucion de s-03-tablas-temporales.sql
+@s-03-tablas-temporales.sql
+
 prompt ejecucion de s-04-tablas-externas.sql
 @s-04-tablas-externas.sql
 
@@ -59,10 +62,14 @@ prompt ejecucion de s-07-sinonimos.sql
 prompt ejecucion de s-15-fx-importe.sql
 @s-15-fx-importe.sql
 
+prompt ejecucion s-15-fx-clave_cliente.sql
+@s-15-fx-clave_cliente.sql
+
+prompt ejecucion s-15-fx-folio-pedido.sql
+@s-15-fx-folio-pedido.sql
+
 prompt ejecucion de s-08-vistas.sql
 @s-08-vistas.sql
-
-
 
 prompt ejecuciòn de carga-inicial
 @s-09-carga-inicial.sql
