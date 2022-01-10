@@ -23,7 +23,7 @@ begin
   v_farmacia_id := 895;
 
 --Se obtienen las unidades actuales del medicamento_id = 400 
--- en la farmacia 10
+-- en la farmacia 895
   select unidades into v_unidades_actuales
   from farmacia_medicamento_presentacion 
   where medicamento_presentacion_id = v_medicamento_id
