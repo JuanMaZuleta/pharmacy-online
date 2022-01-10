@@ -42,6 +42,7 @@ dbms_output.put_line('Se realizó una nueva orden con id= '
                     ||v_medicamento_nombre
                     ||' en la farmacia con id= '
                     ||v_farmacia_id);
+commit;
 end;
 / 
 show errors
