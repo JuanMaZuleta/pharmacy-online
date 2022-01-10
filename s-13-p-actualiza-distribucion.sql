@@ -7,15 +7,18 @@ connect sys/system as sysdba
 create or replace directory planos_dir as '/tmp/proyecto/planos';
 grant read, write on directory planos_dir to cmz_proy_admin;
 
-prompt Creando procedimiento con usuario cmz_proy_admin
-connect cmz_proy_admin/cmz
-show user
-
 Prompt creando el directorio /tmp/proyecto en caso de no existir
 !mkdir -p /tmp/proyecto
 
 Prompt moviendo la carpeta de imagenes a directorio
 !cp -r planos /tmp/proyecto
+
+Prompt concediendo permisos para l directorio /tmp/proyecto/planos
+!chmod 755 /tmp/proyecto/planos
+
+prompt Creando procedimiento con usuario cmz_proy_admin
+connect cmz_proy_admin/cmz
+show user
 
 set serveroutput on
 create or replace procedure sp_inserta_plano
