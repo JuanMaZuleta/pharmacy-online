@@ -54,6 +54,7 @@ end;
 prompt creando tabla externa
 create table demandas_ext (
 demanda_id number(10, 0),
+farmacia_id number(10,0),
 descripcion varchar2(40),
 estado varchar2(40),
 multa number(10),
@@ -73,7 +74,7 @@ fields terminated by ','
 lrtrim
 missing field values are null
 (
-demanda_id, descripcion, estado, multa,
+demanda_id, farmacia_id, descripcion, estado, multa,
 fecha_inicio date mask "dd/mm/yyyy", fecha_fin date mask "dd/mm/yyyy"
 )
 )
