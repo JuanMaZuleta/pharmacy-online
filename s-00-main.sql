@@ -4,7 +4,7 @@
 --@Fecha creación: 04/01/2022
 --@Descripción: Invocaciòn de scripts
 --Conectando como usuario sys 
-connect sys as sysdba/system
+connect sys/system as sysdba
 
 set serveroutput on
 declare
