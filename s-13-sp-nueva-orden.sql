@@ -36,4 +36,4 @@ v_sql_historico:='insert into historico_status ( '
 execute immediate v_sql_historico using v_historico_seq,v_pedido_seq;
 end;
 /
-show errors
+show errors 
