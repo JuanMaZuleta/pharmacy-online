@@ -82,6 +82,7 @@ begin
     || v_farmacia_id
     ||'.');
   end if; 
+  commit;
 end;
 /
 show errors
