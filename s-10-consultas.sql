@@ -18,6 +18,7 @@ e.empleado_id = f.gerente_id;
 --3.Generar un reporte que muestre los siguientes datos:
 --*Nombre,apellidos y telefono del cliente
 --*De existir, los datos de la tarjeta de pago
+--Esta consulta puede usarla el usuario invitado
 create table consulta_3 as
 select c.nombre, c.ap_materno, c.ap_paterno,c.telefono, t.numero numero_tarjeta, 
   t.anio_expiracion, t.mes 
@@ -99,3 +100,9 @@ from (select v_pedidos_cancelados_devueltos.farmacia_id,
         sum(v_pedidos_cancelados_devueltos.importe_total) perdida
       from v_pedidos_cancelados_devueltos
       group by (v_pedidos_cancelados_devueltos.farmacia_id));
+      
+/*
+9.Generar una consulta que muestre los datos de la tabla temporal 
+centro_operacion_total_temp*/
+create table consulta_9 as
+select * from centro_operacion_total_temp;
