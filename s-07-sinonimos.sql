@@ -62,3 +62,7 @@ create or replace synonym pr_historico_status
   for historico_status;
 create or replace synonym pr_status_pedido
   for status_pedido;
+create or replace synonym pr_empleado_despedido
+  for empleado_despedido;
+create or replace synonym pr_operacion_riesgo
+  for operacion_riesgo;
