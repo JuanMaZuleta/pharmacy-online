@@ -22,7 +22,7 @@ declare
     v_num_index_function_based number(10,0):=0;
     v_num_index_lob number(10,0):=0;
 
-    v_nombre_tabla varchar2(30);
+    v_nombre_tabla varchar2(100);
     v_num_registros number(10,0);
     v_tipo_constraint varchar2(1);
     v_num_constraints number(10,0);
