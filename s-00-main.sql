@@ -62,4 +62,21 @@ prompt ejecucion de s-15-fx-importe.sql
 prompt ejecuciòn de carga-inicial
 @s-09-carga-inicial.sql
 
+prompt ejecucion de triggers
+prompt tr-actual_unidades
+@s-11-tr-actual_unidades.sql
+
+prompt tr-empleado_despedido
+@s-11-tr-empleado_despedido.sql
+
+prompt tr-operacion_riesgo
+@s-11-tr-operacion_riesgo.sql
+
+prompt ejecución de pruebas para triggers
+prompt prueba para tr-actual_unidades
+@s-12-tr-actual_unidades-prueba.sql
+
+prompt prueba para tr-empleado_despedido
+@s-12-tr-empleado_despedido-prueba.sql
+
 Prompt Listo!
