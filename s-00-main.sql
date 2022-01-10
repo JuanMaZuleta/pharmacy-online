@@ -67,6 +67,9 @@ prompt ejecucion de s-08-vistas.sql
 prompt ejecuciòn de carga-inicial
 @s-09-carga-inicial.sql
 
+prompt ejecucion de s-10-consultas.sql
+@s-10-consultas.sql
+
 prompt ejecucion de triggers
 prompt tr-actual_unidades
 @s-11-tr-actual_unidades.sql
