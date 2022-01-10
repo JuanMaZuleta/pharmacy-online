@@ -6,12 +6,12 @@ join status_pedido sp
   on p.status_pedido_id = sp.status_pedido_id
 group by sp.descripcion;
 
---Mostrar un reporte de los cliente. Los datos del reporte son:
+--Mostrar un reporte de los compradores. Los datos del reporte son:
 --* Nombre,apellidos y telefono del cliente
---*De existir, los datos de la tarjeta
+--*De existir, los datos de la tarjeta de pago
 select c.nombre, c.ap_materno, c.ap_paterno,c.telefono, t.numero numero_tarjeta, 
   t.anio_expiracion, t.mes 
-from cliente c,tarjeta t
+from comprador c,tarjeta_de_pago t
 where c.tarjeta_id = t.tarjeta_id(+);
 
 --Para cada cliente mostrar su compra màxima y mìnima
