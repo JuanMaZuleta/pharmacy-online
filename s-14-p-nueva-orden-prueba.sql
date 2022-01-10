@@ -7,6 +7,8 @@
 
 set serveroutput on 
 declare 
+
+--Variables para corroborar insersicón debido a un nuevo pedido
 v_farmacia_id number;
 v_unidades number;
 v_medicamento_nombre varchar2(100);
@@ -16,6 +18,7 @@ begin
 sp_nueva_orden(1,1,10);
 commit;
 
+--Consulta para determinar las variables de la nueva inserción 
 select dp.unidades,mn.nombre,dp.farmacia_id,dp.detalle_pedido_id into v_unidades,v_medicamento_nombre,v_farmacia_id,v_detalle_pedido
 from detalle_pedido dp
 join medicamento_presentacion mp 
@@ -34,6 +37,7 @@ and mn.medicamento_nombre_id=(
       on m.medicamento_id=mp.medicamento_id
     where mp.medicamento_presentacion_id=1);
 
+--Se imprime en pantalla un resumen de la operacion 
 dbms_output.put_line('Se realizó una nueva orden con id= '
                     ||v_detalle_pedido ||'.'
                     ||' Se compraron  '
