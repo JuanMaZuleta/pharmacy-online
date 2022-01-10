@@ -41,6 +41,19 @@ create table empleado(
   constraint empleado_centro_de_operacion_id_fk foreign key(centro_de_operacion_id)
   references centro_de_operacion(centro_de_operacion_id)
 );
+
+Prompt tabla empleado_despedido
+
+create table empleado_despedido(
+  empleado_despedido_id number(10,0) not null,
+  fecha_evento date not null,
+  usuario varchar2(40) not null,
+  descripcion varchar(400) not null,
+  liquidacion number (10,2) not null,
+  constraint empleado_despedido_pk primary key (empleado_despedido_id) 
+)
+;
+
 Prompt tabla farmacia
 
 create table farmacia (
