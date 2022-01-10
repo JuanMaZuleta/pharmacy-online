@@ -30,7 +30,7 @@ end;
 prompt creando directorio tmp_dir
 create or replace directory tmp_dir as '/tmp/demandas';
 
---se otorgan permisos para que el usuario jorge0507 de la BD pueda leer
+--se otorgan permisos para que el usuario cmz_proy_admin de la BD pueda leer
 --el contenido del directorio
 grant read, write on directory tmp_dir to cmz_proy_admin;
 prompt Contectando con usuario admin para crear la tabla externa
