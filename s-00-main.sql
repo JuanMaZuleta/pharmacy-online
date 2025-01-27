@@ -1,9 +1,9 @@
---@Autor(es):  Cruz Ramos Diego Alejandro
+-- @Autor(es):  Cruz Ramos Diego Alejandro
 --             Martinez Alvarez Pedro
 --             Zuleta Ceja Juan Manuel
---@Fecha creación: 04/01/2022
---@Descripción: Invocaciòn de scripts
---Conectando como usuario sys 
+-- @Fecha creación: 04/01/2022
+-- @Descripción: Invocaciòn de scripts
+-- Conectando como usuario sys 
 connect sys/system as sysdba
 
 set serveroutput on

@@ -37,55 +37,56 @@ declare
     v_num_invalid number(10,0):=0;
     v_username varchar2(30);
     v_created date;
-
+    
     cursor cur_tablas IS select table_name from user_tables;
     cursor cur_constraints is select constraint_type, 
         count(*)user_sequences from user_constraints 
         where constraint_type in('C','P','U','R') group by constraint_type;
     cursor cur_usuarios is select username,created from all_users 
         where username like '%_PROY_USER%' or username like '%_PROY_ADMIN%';
+
 begin
-	--tablas 
+-- tablas
     select count(*) into v_num_tablas_temp from user_tables where temporary='Y';
     select count(*) into v_num_tablas_externas from user_external_tables;
-   	--secuencias
+   	-- secuencias
    	select count(*) into v_num_sequences from user_sequences;    
-    --columnas
+    -- columnas
     select count(*) into v_num_default from user_tab_cols where data_default is not null and virtual_column='NO';
     select count(*) into v_num_virtual from user_tab_cols where data_default is not null and virtual_column='YES';
     select count(*) into v_num_lobs from user_tab_cols where data_type in('BLOB','CLOB');
-    --indices
+    -- indices
     select count(*) into v_num_index_non_unique from user_indexes where index_type='NORMAL' and uniqueness='NONUNIQUE';
     select count(*) into v_num_index_lob from user_indexes where index_type='LOB';
     select count(*) into v_num_index_function_based from user_indexes where index_type='FUNCTION-BASED NORMAL';
-    --indices de PKs
+    -- indices de PKs
     select count(*) into v_num_index_unique_pk 
     from user_indexes ix, user_constraints uc
 	where ix.index_name = uc.index_name 
 	and uc.constraint_type='P'
 	and ix.uniqueness ='UNIQUE'
 	and ix.index_type='NORMAL';
-	--indices unique no pks
+	-- indices unique no pks
 	select count(*) into v_num_index_unique_non_pk
 	from user_indexes 
 	where uniqueness ='UNIQUE'
 	and index_name not in(select index_name from user_constraints  where index_name is not null) 
 	and index_type ='NORMAL';
 
-    --directorios
+    -- directorios
     select count(*) into v_num_directories from all_directories;
-    --sinonimos
+    -- sinonimos
    select count(*) into v_num_private_synonyms from user_synonyms;
    select count(*) into v_num_public_synonyms from all_synonyms where table_owner=sys_context('USERENV','SESSION_USER');
-   --vistas
+   -- vistas
    select count(*) into v_num_views from user_views;
-   --pl/sql objects
+   -- pl/sql objects
    select count(*) into v_num_triggers from user_procedures where object_type='TRIGGER';
    select count(*) into v_num_procedures from user_procedures where object_type='PROCEDURE';
    select count(*) into v_num_functions from user_procedures where object_type='FUNCTION';
-   --invalidos
+   -- invalidos
    select count(*) into v_num_invalid from user_objects where status ='INVALID';
-    --registros
+    -- registros
     open cur_tablas;
     loop 
         fetch cur_tablas into v_nombre_tabla;
@@ -100,7 +101,7 @@ begin
 
     v_num_total_tablas:=cur_tablas%rowcount;
     close cur_tablas;
-    --constraints
+    -- constraints
     open cur_constraints;
     loop
         fetch cur_constraints into v_tipo_constraint,v_num_constraints;
